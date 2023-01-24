@@ -58,11 +58,16 @@ h1,
 h2,
 h3 {
   font-family: "Oswald", "Ubuntu", "Raleway";
-  color: #111111;
+  color: #303030;
+  font-weight: 700;
+  line-height: 1em;
+  margin: 0 0 1em 0;
+  text-transform: uppercase;
 }
 
 h1 {
   font-size: 2.5rem; /* 3 times the body text */
+  margin: 13px 0;
 }
 
 h2 {
@@ -87,6 +92,70 @@ figcaption {
   font-size: 0.75rem; /* ¾ of the body text */
 }
 
+a {
+  text-decoration: none;
+  color: #050505;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a,
+h1 a:link {
+  text-decoration: none;
+  color: #050505;
+}
+a,
+h1 a:visited {
+  text-decoration: none;
+  color: #050505;
+}
+a,
+h1 a:focus,
+a:hover {
+  text-decoration-line: underline;
+  text-underline-position: under;
+  text-underline-offset: 0.225em;
+  color: #000;
+  text-decoration-color: #000;
+}
+a,
+h1 a:active {
+  text-decoration: none;
+  color: #050505;
+}
+
+strong,
+b {
+  color: #020202;
+  font-weight: 700;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+/* HEADER */
+
+/* NAV */
+
+#header nav {
+  font-family: "Poppins";
+  margin-right: 2em;
+  line-height: 4.5em;
+}
+
 nav {
-  font-size: 0.875em;
+  font-size: 1em;
+}
+
+#nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+#nav ul li {
+  text-transform: uppercase;
 }
