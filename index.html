@@ -55,21 +55,121 @@
         <p>
           Nu är det dags att komma igång med det skarpa arbetet. Jag vill märka
           upp, stila och fylla dokumenten med innehåll för att det slutgiltigen
-          ska utgöra en webbplats/hemsida. Vi börjar med HTML med denna
-          förklaring från wikipedia:
+          ska utgöra en webbplats/hemsida.
         </p>
 
-        <p class="blockquote">
-          "HTML ger möjlighet att ange ett dokuments struktur (rubriker,
+        <h3>HTML</h3>
+
+        <p>Vi börjar med HTML med denna förklaring från wikipedia:</p>
+
+        <blockquote>
+          HTML ger möjlighet att ange ett dokuments struktur (rubriker,
           styckeindelning m.m.), metainformation (språk, författare, plats i en
           hierarki) och i viss mån hur dokumentet skall visas. HTML tillåter
           också att man infogar information av andra typer, eventuellt i andra
           filer, från början framförallt bilder, senare till exempel
           datorprogram (java, javascript) och instruktioner för hur sidan skall
           visas (CSS). (Wikipedia, 2021)
+        </blockquote>
+
+        <p>
+          Jag skapar en huvudsektion som är basen för huvudsidan index.html</br> Jag använder mig av
+          det semantiska HTML elementen &lt;main&gt; Här kommer en förklaring
+          till semantisk HTML.
         </p>
 
-        <p></p>
+        <blockquote>
+          Semantic HTML, also known as semantic markup, refers to the use of
+          HTML tags that convey the meaning—or semantics—of the content
+          contained within them. By adding semantic HTML tags to your pages, you
+          provide additional information that helps define the roles and
+          relative importance of the different parts of your page. As opposed to
+          non-semantic HTML, which uses tags that don’t directly convey meaning.
+          (Semrush Blog, n.d.)
+        </blockquote>
+
+        <h3>CSS</h3>
+
+        <p>
+          Det är dags för att stila upp dokumentet, vi vill informera
+          webbläsaren om hur det ska visas för användaren. Jag skapar en mapp
+          som heter Styles där jag kan lägga flertal olika delar av stilandet i
+          separata filer/stilnings-dokument för att jag ska slippa en stor/lång
+          och svårläst fil.
+        </p>
+
+        <p>Vad är då CSS? Här kommer en förklaring från wikipedia:</p>
+
+        <blockquote>
+          Cascading Style Sheets (CSS, på svenska stilmall) är ett språk som
+          beskriver presentationsstilen för ett strukturerat dokument som till
+          exempel typsnitt, textstorlek och färg. Tekniken är ett sätt att
+          anpassa dokumentet med hänsyn till datortyp, skärmupplösning, färgdjup
+          och installerade typsnitt.
+        </blockquote>
+
+        <p>
+          Nu vidare till struktureringen av mina stilmallar. Jag inleder med en
+          css-reset fil i min Styles/ mapp och i detta fall använder jag mig av
+          Erics Meyer's, varför gör jag detta? Här kommer en förklaring från
+          meyerweb.com
+        </p>
+
+        <blockquote>
+          The goal of a reset stylesheet is to reduce browser inconsistencies in
+          things like default line heights, margins and font sizes of headings,
+          and so on. (Meyerweb.com, 2019)
+        </blockquote>
+
+        <p>Wikipedias förklarande:</p>
+
+        <blockquote>
+          A reset stylesheet (or CSS reset) is a collection of CSS rules used to
+          clear the browser's default formatting of HTML elements, removing
+          potential inconsistencies between different browsers. (Wikipedia,
+          2021)
+        </blockquote>
+
+        <p>
+          Eftersom CSS teknik är baserat på kaskad (Cascading) så är det viktigt
+          att tänka på vilken ordning stilandet implementeras (Tänk ett
+          vattenfall) Vi börjar med det som är stommen och sen kommer det senare
+          att fylla på eller skriva över det tidigare om man nu så vill (Det
+          finns användning för det)
+        </p>
+
+        <p>Jag skapar en fil i Styles mappen med namnet style.css detta kommer att vara den stilfel med allt huvudinnehåll för stilandet. I filen inleder jag med göra en "box-sizing-reset" med denna förklaring:</p>
+
+        <blockquote>You might have been dealing with a lot of mathematical calculations to size up different elements, if you are not using this CSS box-sizing reset.
+You might already know about box-sizing CSS property, that lets you choose a sizing nature for the box. By default, it is set to content-box. The border-width and padding values when added to a content-box, are exclusively added to the whole width of the box. (W3Bits, 2014)</blockquote>
+
+<p>Innehållet på en webbsida är uppdelade i flera olika boxar som tillsammans utgör hela sidan men för att strukturera upp stilandet finns det olika standardbeteende man kan ställa in för hur webbläsaren beräknar storleken på dessa boxar. Ifall du väljer att börja med en box-sizing-reset på det sättet jag ställt in det, slipper du räkna på marginaler, paddings (det som ligger runt din box) detta ingår istället i den totala bredden av boxen</p>
+
+<p>Jag fortsätter med att längst upp i style.css skapa(skriva in) en TOC (Table Of Content) detta simplifierar läsandet av min fil genom att beskriva de olika delarna i en punktlista</p>
+        <p>
+          Jag vill nu stila upp de olika delarna av mitt innehåll i de olika
+          dokumenten, jag utgår ifrån första sidan (index.html) och gör den så
+          bra och användarvänlig som möjligt, då kan jag lätt fylla på i de
+          andra sidorna sedan och ändra det som behöver passa mer specifikt på
+          den individuella sidan.
+        </p>
+
+        <p>
+          Mitt sätt att jobba kan variera, ibland fokuserar jag helt på HTML
+          först och sedan stilar upp det med CSS och ibland tar jag det pö om
+          pö. I denna process tar jag det pö om pö och försöker bocka av
+          kriterierna för examinationen.
+        </p>
+
+        <p>
+          Jag försöker använda mig av tidigare "kod" från tidigare projekt för
+          inspiriation och för att inte fastna med "en blank canvas". Det är ett
+          bra sätt att gå tillbaka och se hur jag har klarat av löst "problem".
+          Alternativt googlar jag fram lösningar eller läser artiklar. Att gå
+          tillbaka och titta på videos från kursen har också hjälpt mig.
+        </p>
+
+        <p>Jag delar</p>
 
         <ul class="refs">
           <li>
@@ -82,6 +182,21 @@
             Wikipedia. (2021). HTML. [online] Available at:
             https://sv.wikipedia.org/wiki/HTML [Accessed 17 Jan. 2023].
           </li>
+          <li>
+            Meyerweb.com. (2019). CSS Tools: Reset CSS. [online] Available at:
+            https://meyerweb.com/eric/tools/css/reset/.
+          </li>
+          <li>
+            Wikipedia. (2021). Reset style sheet. [online] Available at:
+            https://en.wikipedia.org/wiki/Reset_style_sheet [Accessed 24 Jan.
+            2023].
+          </li>
+          <li>
+            Semrush Blog. (n.d.). HTML5 Semantic Tags: What Are They and How To
+            Use Them! [online] Available at:
+            https://www.semrush.com/blog/semantic-html5-guide/.
+          </li>
+          <li>W3Bits. (2014). Understanding the Box Sizing Reset in CSS. [online] Available at: https://w3bits.com/box-sizing-reset/ [Accessed 24 Jan. 2023].</li>
 
           ‌
         </ul>
