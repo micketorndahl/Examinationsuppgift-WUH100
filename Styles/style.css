@@ -27,10 +27,6 @@ html {
   padding: 0;
 }
 
-html,
-body {
-}
-
 html {
   font-size: 100%;
 }
@@ -135,6 +131,25 @@ i {
   font-style: italic;
 }
 
+/* TOP CONTAINER (Holding Header and Navigation) */
+
+.top-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-container ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.top-container ul li {
+  padding: 2em;
+  justify-content: space-around;
+}
+
 /* HEADER */
 
 header h1 {
@@ -172,17 +187,10 @@ header.major p {
 
 #header nav {
   font-family: "Poppins";
-  margin-right: 2em;
-  line-height: 4.5em;
 }
 
 nav {
   font-size: 1em;
-}
-
-#nav ul {
-  display: flex;
-  justify-content: space-around;
 }
 
 #nav ul li {
@@ -192,11 +200,10 @@ nav {
 /* BANNER */
 
 #banner {
-  background-image: url(/Images/mikael-at-mountain.jpeg);
-  background-color: gray;
-  background-size: 100% 100%;
   padding: 16em 0 13em 0;
-  background-position: center;
+  background-image: url(/Images/mikael-at-mountain.jpeg);
+  background-size: cover;
+  background-position: top center;
   background-attachment: fixed;
   text-align: center;
   line-height: 1.2em;
