@@ -142,9 +142,15 @@
             datorprogram (java, javascript) och instruktioner för hur sidan skall
             visas (CSS). (Wikipedia, 2021)
             </blockquote>
+          
+          <p>Jag skapar ett par stycken .html-filer och varje fil representerar en delsida av hemsidan. index.html är startfilen, det är den fil vi utgår ifrån och den som innehåller välkomstsidan och ofta huvudinnehållet (Main-Content). De andra döps efter det dem ska innehålla (About, contact etc)</p>
+
+          <p>Man kan ofta fylla index.html med en hel del och sen copy/pastea det vidare till de andra sidorna så att det får samma grundmall för att sedan specifiera dem för ändamålet de har</p>
+
+
 
           <p>
-          Jag skapar en huvudsektion som är basen för huvudsidan index.html</br> Jag använder mig av
+          Jag börjar med att skapa en huvudsektion som är basen för huvudsidan index.html</br> Jag använder mig av
           det semantiska HTML elementen &lt;main&gt; Här kommer en förklaring
           till semantisk HTML.
           </p>
@@ -158,6 +164,15 @@
               non-semantic HTML, which uses tags that don’t directly convey meaning.
               (Semrush Blog, n.d.)
             </blockquote>
+
+          <p>Semantiska element är förklarande och underlättar för personer med hjälpmedel som t.e.x läsplattor. Det hjälper även webbutvecklare att navigera runt lättare när elementen beskriver innehållet.</p>
+
+          <p>Det är i elementet main som jag kommer fylla med text för den här processanalysen kring att skapa en hemsida. Eftersom det är mycket text delar jag upp processanalysen i delar(sektioner) därmed använder jag mig av det semantiska elementet &lt;section&gt;. Jag vet att jag vill ha 3 kolumner/sektioner för att dela upp innehållet och göra det mer lättläsligt. Skulle texten löpa genom enbart en sektion från sida till sida på skärmen skulle det bli väldigt svårläst</p>
+
+          <p>Jag skapar 3 sektioner den här gången och kallar dem section1, 2 och 3. Detta för att senare kunna använda CSS och stila upp dessa till spalter bredvid varandra. Det är viktigt att sektionerna omslutas av main-elementet då det utgör en container(box/ram) som vi använder för att gruppera innehållet och stila det tillsammans med de CSS verktyg som finns. De olika sektionerna omsluter i sin tur dem rubriker och paragrafer som jag vill ha i just den sektionen. Rubrik skrivs innanför &lt;h1&gt; - &lt;h6&gt; och du väljer från lågt - till högt beroende på hur viktiga dem är för innehållet (h1 är viktigast(heading 1) och sen går det nedåt i rang. paragrafer skrivs innanför elementet &lt;p&gt; och omslutar all brödtext.
+            
+            Det är viktigt att main elementet omsluter dessa sektioner</p>
+            
         </section>
       
         <section class="section2">
