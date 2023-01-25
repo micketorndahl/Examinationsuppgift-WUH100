@@ -11,6 +11,7 @@
   8.
 
 /* 1. Box-Sizing-Reset */
+
 html {
   box-sizing: border-box;
 }
@@ -26,6 +27,8 @@ html {
 }
 
 /* 2. BASIC TYPOGRAPHY */
+
+/* Setting up color variables so I don't have to change color at multiple places if I decide to change a common color */
 
 :root {
   --background-color: #fff;
@@ -79,7 +82,7 @@ h2 {
     0.4rem + 5vw,
     2.5rem
   ); /* Responsive fluid font-size with rem and clamp setting minium, between and max points */
-  margin: 0.8em 0.4em;
+  margin: 0.8rem 0.2rem;
 }
 
 h3 {
@@ -88,7 +91,7 @@ h3 {
     0.1rem + 4vw,
     1.8rem
   ); /* Responsive fluid font-size with rem and clamp setting minium, between and max points */
-  margin: 0.8em 0.4em;
+  margin: 0.8rem 0.4rem;
 }
 
 p {
@@ -97,7 +100,7 @@ p {
 }
 
 blockquote {
-  background-color: #f8f3f3;
+  background-color: rgba(217, 217, 217, 0.675);
   margin: 1rem 1rem;
 }
 
@@ -109,6 +112,19 @@ a {
   text-decoration: none;
   color: #050505;
 }
+
+strong,
+b {
+  color: #020202;
+  font-weight: 700;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+/* PSEUDOELEMENTS */
 
 a:hover {
   text-decoration: underline;
@@ -137,17 +153,6 @@ a,
 h1 a:active {
   text-decoration: none;
   color: var(--a-links-color);
-}
-
-strong,
-b {
-  color: #020202;
-  font-weight: 700;
-}
-
-em,
-i {
-  font-style: italic;
 }
 
 /* TOP CONTAINER (Holding Header and Navigation) */
@@ -336,4 +341,55 @@ main {
 .section3 {
   grid-area: section3;
   border: 1px solid rgb(246, 246, 246);
+}
+
+.refs-footer {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(217, 217, 217, 0.675);
+  margin: 0 auto;
+}
+
+.refs {
+  margin-left: 7rem;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+}
+
+.refs a {
+  color: rgb(3, 2, 2);
+  font-weight: bolder;
+}
+
+.refs a:hover {
+  text-decoration-color: rgb(72, 0, 0);
+  text-decoration-thickness: 0.1rem;
+  text-underline-offset: 0;
+}
+.refs h3 {
+  font-size: 1.3rem;
+  margin: 1rem 0;
+}
+
+.refs li {
+  font-size: 1rem;
+  font-style: italic;
+  color: rgb(81, 81, 85);
+  border-bottom: 0.05rem solid rgb(82, 4, 4);
+  width: 50%;
+}
+
+.ref-note {
+  font-size: 0.8rem;
+}
+
+.fa-brands {
+  font-size: 0.9rem;
+  padding: 0.2rem;
+  color: red;
+}
+
+.fa-brands:hover {
+  color: rgb(137, 0, 0);
+  text-decoration-color: rgb(82, 4, 4);
 }
