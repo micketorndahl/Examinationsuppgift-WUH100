@@ -108,6 +108,11 @@ blockquote {
   border-radius: 0.2rem;
 }
 
+q {
+  font-style: italic;
+  background-color: rgba(217, 217, 217, 0.675);
+}
+
 figcaption {
   font-size: 0.75rem; /* ¾ of the body text */
 }
@@ -144,6 +149,7 @@ h1 a:visited {
   text-decoration: none;
   color: var(--a-links-color);
 }
+
 a,
 h1 a:focus,
 a:hover {
@@ -185,11 +191,12 @@ h1 a:active {
 
 header h1 {
   font-family: "Raleway";
+  color: var(--heading-text-color);
 }
 
 #header a:hover {
   text-decoration-line: none;
-  color: #1e1d1d;
+  color: var(--a-links-color);
 }
 
 /* NAV */
@@ -200,6 +207,10 @@ header h1 {
 
 nav {
   font-size: clamp(0.5rem, 0.1rem + 3vw, 1.2555rem);
+}
+
+nav a:hover {
+  text-decoration-color: #0693e3;
 }
 
 #nav ul li {
