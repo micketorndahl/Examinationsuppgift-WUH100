@@ -1,7 +1,7 @@
 /* ------- TABLE OF CONTENT --------- 
 
 
-  1. Box-Sizing-Reset
+  1. Box-Sizing-Reset & margin/padding reset
   2.
   3.
   4.
@@ -20,20 +20,26 @@ html {
   box-sizing: inherit;
 }
 
-/* 2. BASIC TYPOGRAPHY */
-
 * {
   margin: 0;
   padding: 0;
 }
 
+/* 2. BASIC TYPOGRAPHY */
+
+:root {
+  --background-color: #fff;
+  --body-text-color: #2e475d;
+  --heading-text-color: #303030;
+  --a-links-color: #050505;
+}
+
 html {
-  font-size: 100%;
 }
 
 body {
-  background-color: #fff;
-  color: #2e475d;
+  background-color: var(--body-background-color);
+  color: var(--body-text-color);
   overflow-x: hidden;
 }
 
@@ -52,24 +58,36 @@ h1,
 h2,
 h3 {
   font-family: "Oswald", "Ubuntu", "Raleway";
-  color: #303030;
+  color: var(--heading-text-color);
   font-weight: 700;
   line-height: 1em;
   text-transform: uppercase;
 }
 
 h1 {
-  font-size: 2.5rem; /* 3 times the body text */
+  font-size: clamp(
+    0.3rem,
+    0.5rem + 5vw,
+    2.5rem
+  ); /* Responsive fluid font-size with rem and clamp setting minium, between and max points */
   margin: 0.2em 0.4em;
 }
 
 h2 {
-  font-size: 2.5rem; /* 2 times the body text */
+  font-size: clamp(
+    0.2rem,
+    0.4rem + 5vw,
+    2.5rem
+  ); /* Responsive fluid font-size with rem and clamp setting minium, between and max points */
   margin: 0.8em 0.4em;
 }
 
 h3 {
-  font-size: 1.5rem; /* 1 ½ times the body text */
+  font-size: clamp(
+    0.2rem,
+    0.1rem + 4vw,
+    1.8rem
+  ); /* Responsive fluid font-size with rem and clamp setting minium, between and max points */
   margin: 0.8em 0.4em;
 }
 
@@ -99,12 +117,12 @@ a:hover {
 a,
 h1 a:link {
   text-decoration: none;
-  color: #050505;
+  color: var(--a-links-color);
 }
 a,
 h1 a:visited {
   text-decoration: none;
-  color: #050505;
+  color: var(--a-links-color);
 }
 a,
 h1 a:focus,
@@ -118,7 +136,7 @@ a:hover {
 a,
 h1 a:active {
   text-decoration: none;
-  color: #050505;
+  color: var(--a-links-color);
 }
 
 strong,
@@ -205,7 +223,7 @@ nav {
   top: -11.2em;
   margin: 2em auto;
   line-height: 1.1em;
-  color: #303030;
+  color: var(--heading-text-color);
   font-size: 1.4em;
   text-transform: uppercase;
 }
@@ -282,13 +300,15 @@ ul.actions li {
   padding: 0 1em 0 0;
 }
 
-ul li {
+/* ANIMATIONS */
+
+nav ul li {
   transition: all 0.1s ease-in-out 0.1s;
 }
 
-ul li:hover {
+nav ul li:hover {
   transform: scale(1.255) translateY(0.2em);
-  transition: all 0.6s ease-in-out 0.2s;
+  transition: all 0.2s ease-in-out 0.2s;
 }
 
 /* MAIN */
