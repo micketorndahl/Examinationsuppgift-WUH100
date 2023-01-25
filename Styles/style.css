@@ -67,8 +67,8 @@ h3 {
 h1 {
   font-size: clamp(
     0.3rem,
-    0.5rem + 5vw,
-    2.5rem
+    0.5rem + 3vw,
+    2rem
   ); /* Responsive fluid font-size with rem and clamp setting minium, between and max points */
   margin: 0.2em 0.4em;
 }
@@ -92,7 +92,7 @@ h3 {
 }
 
 p {
-  font-size: 1rem;
+  font-size: clamp(0.1rem, 0.1rem + 2.8vw, 1rem);
   margin: 0.8em 0.4em;
 }
 
@@ -190,7 +190,7 @@ header h1 {
 }
 
 nav {
-  font-size: 1em;
+  font-size: clamp(0.5rem, 0.1rem + 3vw, 1.2555rem);
 }
 
 #nav ul li {
@@ -211,22 +211,24 @@ nav {
 
 #banner h2 {
   position: relative;
-  top: -4em;
+  top: -18rem;
+  margin: 3rem;
   color: #fff;
   display: inline-block;
-  font-size: 3.5em;
-  line-height: 1.35em;
-  margin-bottom: -20em;
+  font-size: clamp(2rem, 1rem + 5.5vw, 3.5rem);
+  line-height: 4rem;
 }
 #banner p {
   position: relative;
-  top: -11.2em;
-  margin: 2em auto;
-  line-height: 1.1em;
+  top: -23.5rem;
+  margin: 3rem auto;
+  line-height: 1.5rem;
   color: var(--heading-text-color);
-  font-size: 1.4em;
+  font-size: clamp(1rem, 0.7rem + 0.9vw, 2rem);
   text-transform: uppercase;
 }
+
+/* BUTTONS */
 
 button,
 .button {
@@ -252,11 +254,10 @@ button.special,
 }
 
 #button-portfolio {
-  position: relative;
-  bottom: 7em;
-  padding: 1em;
+  margin: 0 auto;
+  padding: 1rem;
   line-height: 1em;
-  font-size: 1.3em;
+  font-size: 1.1rem;
   z-index: 3000;
   border-radius: 10em;
 }
