@@ -227,6 +227,7 @@ nav a:hover {
   background-attachment: fixed;
   text-align: center;
   line-height: 1.2em;
+  min-width: 100%;
 }
 
 #banner h2 {
