@@ -36,9 +36,9 @@ html {
   --heading-text-color: #303030;
   --a-links-color: #050505;
   --skyblue-design: #0693e3;
-}
-
-html {
+  --quote-color: #74c3f1;
+  --grey-bg-color: rgba(217, 217, 217, 0.675);
+  --darkgrey-bg-color: rgb(56, 56, 56);
 }
 
 body {
@@ -46,6 +46,8 @@ body {
   color: var(--body-text-color);
   overflow-x: hidden;
 }
+
+/* Setting up general font-familys, font-size, font-weight and line-height for the elements selected down under */
 
 body,
 input,
@@ -58,6 +60,8 @@ textarea {
   line-height: 1.5em;
 }
 
+/* Choosing other fonts for headings 1 - 3 and giving them my variable color for headings, font-weight, line-height and text-transform so all the letters are uppercased. */
+
 h1,
 h2,
 h3 {
@@ -67,6 +71,8 @@ h3 {
   line-height: 1em;
   text-transform: uppercase;
 }
+
+/* Making the headings and paragraphs responsive with the clamp css-function (The font-size of this text varies depending on the base font of the page, and the size of the viewport.) */
 
 h1 {
   font-size: clamp(
@@ -115,22 +121,27 @@ p {
   margin: 0.8em 0.4em;
 }
 
+/* Styling the blockquote element with a grey background,
+round corners and an italic font-style to seperate it from the body-text */
+
 blockquote {
   quotes: initial;
   font-style: italic;
   line-height: 1.4em;
-  background-color: rgba(217, 217, 217, 0.675);
+  background-color: var(--grey-bg-color);
   margin: 0rem 0.8rem;
-  padding: 0.5rem;
-  border-radius: 0.2rem;
+  padding: 1rem;
+  border-radius: 1rem;
 }
+
+/* Using the pseudo-elements ::before and ::after to put in quotations marks inside the blockquote element before and after the text + styling them to have them stand out */
 
 blockquote::before {
   font-family: Georgia, "Times New Roman", Times, serif;
   content: open-quote;
   font-size: 2rem;
   font-weight: 500;
-  color: #504f4f8a;
+  color: var(--quote-color);
   margin: 0.2rem;
 }
 
@@ -139,33 +150,57 @@ blockquote::after {
   content: close-quote;
   font-size: 2rem;
   font-weight: 500;
-  color: #504f4f8a;
+  color: var(--quote-color);
   margin: 0.2rem;
 }
+
+/* Same as over but with different styling for inline quotes */
 
 q {
   quotes: initial;
   font-style: italic;
-  background-color: rgba(217, 217, 217, 0.675);
+  font-size: 0.9rem;
+  /* background-color: rgb(234, 231, 231); */
+  margin: 0.2rem;
+  padding: 0.2rem;
+}
+
+.q-cite {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  content: open-quote;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--quote-color);
+  margin: 1rem;
+  padding: 0.2rem;
+}
+
+/* Adding line-break to the pseudo-after element, doing it this way I dont have to repeat myself in the html markup (DRY) */
+
+.q-cite::after {
+  content: "\A";
+  white-space: pre;
 }
 
 q::before {
-  font-family: "Courier New", Courier, monospace;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   content: open-quote;
   font-size: 1.5rem;
   font-weight: 500;
-  color: #504f4f8a;
+  color: var(--quote-color);
   margin: 0.2rem;
 }
 
 q::after {
-  font-family: "Courier New", Courier, monospace;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   content: close-quote;
   font-size: 1.5rem;
   font-weight: 500;
-  color: #504f4f8a;
+  color: var(--quote-color);
   margin: 0.2rem;
 }
+
+/* More styling for the differents parts of quote markups */
 
 figcaption {
   font-family: "Times New Roman", Times, serif;
@@ -181,6 +216,8 @@ cite {
   padding: 0;
   margin: 0;
 }
+
+/* General link and emphaasize styling */
 
 a {
   text-decoration: none;
@@ -198,7 +235,7 @@ i {
   font-style: italic;
 }
 
-/* PSEUDOELEMENTS */
+/* General link pseudoelements */
 
 a:hover {
   text-decoration: underline;
@@ -228,6 +265,34 @@ a,
 h1 a:active {
   text-decoration: none;
   color: var(--a-links-color);
+}
+
+/* I make the a links set with the attribute data-tool-tip to choose specific links that I want to do something with. In this case a nice little extra-information tip-bubble */
+/* Using transform scale and transition for neat little animation triggered with the pseudo class :hover */
+
+a[data-tool-tip] {
+  position: relative;
+}
+
+a[data-tool-tip]::after {
+  content: attr(data-tool-tip);
+  display: block;
+  position: absolute;
+  background-color: var(--darkgrey-bg-color);
+  color: #fff;
+  padding: 0rem 0.2rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  bottom: 0;
+  left: 0;
+  white-space: nowrap;
+  transform: scale(0);
+  transition: transform ease-out 150ms, bottom ease-out 150ms;
+}
+
+a[data-tool-tip]:hover::after {
+  transform: scale(1);
+  bottom: 100%;
 }
 
 /* TOP CONTAINER (Holding Header and Navigation) */
@@ -492,9 +557,9 @@ main {
   color: #666;
 }
 
-.page-footer a:hover,
-a:focus,
-a:active {
+.footer-link:hover,
+.footer-link:focus,
+.footer-link:active {
   color: var(--skyblue-design);
   text-decoration-color: #ff6900;
 }
