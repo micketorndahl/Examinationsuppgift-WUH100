@@ -39,6 +39,8 @@ html {
   --quote-color: #74c3f1;
   --grey-bg-color: rgba(217, 217, 217, 0.675);
   --darkgrey-bg-color: rgb(56, 56, 56);
+  --def: #ffffff;
+  --inv: rgb(40, 40, 40);
 }
 
 body {
@@ -101,24 +103,30 @@ h3 {
   margin: 0.8rem 0.4rem;
 }
 
-h3::before {
-  content: "-";
-  background: var(--skyblue-design);
-  font-size: 20px;
-  font-weight: 900;
-  display: block;
-}
-
 h3::after {
-  content: "-";
-  background: var(--skyblue-design);
-  font-size: 1rem;
+  margin: 0.2rem 0;
+  height: 0.2rem;
   display: block;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    #0693e3 0%,
+    #5072a7 35%,
+    rgb(53, 95, 194) 100%
+  );
+  border-radius: 1rem;
+  content: "";
+  transform: skew(-20deg);
 }
 
 p {
   font-size: clamp(0.1rem, 0.1rem + 2.8vw, 1rem);
   margin: 0.8em 0.4em;
+}
+
+/* Setting a pre-wrap on the typer id so it allows my typewriter js function to linebreak */
+#typer {
+  white-space: pre-wrap;
 }
 
 /* Styling the blockquote element with a grey background,
@@ -313,7 +321,7 @@ a[data-tool-tip]:hover::after {
 }
 
 .top-container ul li {
-  padding: 2em;
+  padding: 1rem 2em;
   justify-content: space-around;
 }
 
@@ -339,12 +347,28 @@ nav {
   font-size: clamp(0.5rem, 0.1rem + 3vw, 1.2555rem);
 }
 
+nav a {
+  color: rgb(100, 100, 100);
+}
+
 nav a:hover {
-  text-decoration-color: var(--skyblue-design);
+  color: var(--a-links-color);
+  text-decoration: none;
 }
 
 #nav ul li {
   text-transform: uppercase;
+}
+
+/* nav animations*/
+
+nav li {
+  transition: all 0.1s ease-in-out 0.1s;
+}
+
+nav li:hover {
+  transform: scale(1.155) translateY(0.2em);
+  transition: all 0.15s ease-in-out 0.05s;
 }
 
 /* BANNER */
@@ -371,9 +395,10 @@ nav a:hover {
 }
 #banner p {
   position: relative;
-  top: -23.5rem;
+  top: -26.5rem;
   margin: 3rem auto;
   line-height: 1.5rem;
+  letter-spacing: 0.1rem;
   color: var(--heading-text-color);
   font-size: clamp(1rem, 0.7rem + 0.9vw, 2rem);
   text-transform: uppercase;
@@ -381,36 +406,65 @@ nav a:hover {
 
 /* BUTTONS */
 
-button,
-.button {
-  background-color: #323037;
-  border-radius: 4px;
-  color: #fff !important;
-  border: 0;
-  cursor: pointer;
-  display: inline-block;
-  font-weight: 700;
-  line-height: 3.25em;
-  padding: 0 1em;
-  text-align: center;
+.btn {
+  position: relative;
+  padding: 1.4rem 4.2rem;
+  font-size: 1rem;
   text-decoration: none;
+  color: #fff;
+  letter-spacing: 0.5rem;
   text-transform: uppercase;
-  white-space: nowrap;
+  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  cursor: pointer;
+  user-select: none;
 }
 
-button.special,
-.button.special {
-  background-color: var(--skyblue-design);
-  color: #fff !important;
+.btn:before,
+.btn:after {
+  content: "";
+  position: absolute;
+  transition: inherit;
+  z-index: -1;
+  text-decoration: none;
 }
 
-#button-portfolio {
-  margin: 0 auto;
-  padding: 1rem;
-  line-height: 1em;
-  font-size: 1.1rem;
-  z-index: 3000;
-  border-radius: 10em;
+.btn:hover {
+  color: var(--def);
+  transition-delay: 0.5s;
+  text-decoration: none;
+}
+
+.btn:hover:before {
+  transition-delay: 0s;
+}
+
+.btn:hover:after {
+  background: var(--inv);
+  transition-delay: 0.35s;
+}
+
+.from-bottom:before,
+.from-bottom:after {
+  left: 0;
+  height: 0;
+  width: 100%;
+}
+
+.from-bottom:before {
+  top: 0;
+  border: 1px solid var(--inv);
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.from-bottom:after {
+  bottom: 0;
+  height: 0;
+}
+
+.from-bottom:hover:before,
+.from-bottom:hover:after {
+  height: 100%;
 }
 
 a button,
@@ -423,6 +477,7 @@ a button,
   text-decoration: none;
   color: #fff;
 }
+
 a button:focus,
 a:hover,
 a:active {
@@ -450,17 +505,6 @@ ul.actions {
 ul.actions li {
   display: inline-block;
   padding: 0 1em 0 0;
-}
-
-/* ANIMATIONS */
-
-nav ul li {
-  transition: all 0.1s ease-in-out 0.1s;
-}
-
-nav ul li:hover {
-  transform: scale(1.255) translateY(0.2em);
-  transition: all 0.2s ease-in-out 0.2s;
 }
 
 /* MAIN */
@@ -511,7 +555,7 @@ main {
 }
 
 .refs a:hover {
-  text-decoration-color: rgb(72, 0, 0);
+  text-decoration-color: var(--skyblue-design);
   text-decoration-thickness: 0.1rem;
   text-underline-offset: 0;
 }
@@ -547,47 +591,81 @@ main {
 
 .page-footer {
   padding: 8em 0 6em 0;
-  color: #666;
-  background: #f6f6f6;
+  color: #fffff0;
+  background: url(../images/mikael-with-guitar2.jpeg);
+  background-color: #6e6e6e;
+  background-blend-mode: multiply;
+  background-size: 100%;
+  background-position: top center;
+  background-attachment: fixed;
   text-align: center;
   text-transform: uppercase;
 }
 
 .page-footer a {
-  color: #666;
+  color: #fffff0;
 }
 
 .footer-link:hover,
 .footer-link:focus,
 .footer-link:active {
   color: var(--skyblue-design);
-  text-decoration-color: #ff6900;
+  text-decoration: none;
 }
-
 .page-footer .icons {
+  color: #fffff0;
   font-size: 1.5em;
   font-weight: bolder;
 }
-
 ul.icons li {
   display: inline-block;
   padding: 0 1em 0 0;
 }
-
 .page-footer .copyright {
   margin: 2em 0;
   padding: 0;
   text-align: center;
 }
-
 .page-footer .copyright li {
   display: inline-block;
-  border-left: solid 0.1em rgba(144, 144, 144, 0.25);
+  border-left: solid 0.1em var(--grey-bg-color);
   list-style: none;
   margin-left: 1.5em;
   padding-left: 1.5em;
 }
-
 .page-footer span {
   color: var(--skyblue-design);
+}
+
+.last-link-border {
+  display: inline-block;
+  border-right: solid 0.1em var(--grey-bg-color);
+  list-style: none;
+  margin-right: 1.5em;
+  padding-right: 1.5em;
+}
+
+/* footer animations */
+
+.icons li {
+  transition: all 0.1s ease-in-out 0.1s;
+}
+
+.icons li:hover {
+  transform: scale(1.155) translateY(0.2em);
+  transition: all 0.15s ease-in-out 0.05s;
+}
+
+/* ANIMATIONS */
+
+.fadein {
+  opacity: 0;
+  -moz-transition: opacity 3s;
+  -webkit-transition: opacity 3s;
+  -o-transition: opacity 3s;
+  transition: opacity 3s;
+}
+
+body.loaded .fadein {
+  opacity: 1;
 }
