@@ -264,7 +264,6 @@ a:hover {
   text-decoration-line: underline;
   text-underline-position: under;
   text-underline-offset: 0.225em;
-  text-decoration-color: rgb(100, 100, 100);
 }
 a,
 h1 a:active {
@@ -606,8 +605,8 @@ nav li:hover::after {
   border: 1px solid rgb(23, 74, 12);
   background-image: linear-gradient(0deg, #17430e 0%, #30190d 100%); */
   /* mix-blend-mode: color-burn; */
-  animation: leaveing 2.5s infinite;
-  transition: all 0.6 ease-in-out;
+  animation: leaveing 3s infinite;
+  transition: all 2 ease-in-out;
 }
 
 @keyframes leaveing {
@@ -615,23 +614,25 @@ nav li:hover::after {
     transform: rotate(0deg);
   }
 
-  30% {
-    transform: rotate(90deg);
+  20% {
+    opacity: 0.4;
   }
-  /* 50% {
-    transform: rotate(160deg);
+
+  40% {
+    transform: rotate(90deg);
+    opacity: 1;
   }
 
   70% {
-    transform: rotate(0deg);
-  } */
+    opacity: 0.6;
+  }
 
   /* 85% {
     transform: rotate(10deg);
     color: #bfe7b8;
   } */
 
-  100% {
+  800% {
     transform: rotate(0deg);
   }
 }
@@ -828,8 +829,8 @@ ul.icons li {
 }
 
 .icons li:hover {
-  transform: scale(1.05);
-  transition: all 0.15s ease-in-out 0.5s;
+  transform: scale(1.1);
+  transition: all 0.15s ease-in-out 0.1s;
 }
 
 /* ANIMATIONS */

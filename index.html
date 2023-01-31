@@ -20,15 +20,24 @@
       rel="stylesheet"
     />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;700&display=swap"
-      rel="stylesheet"
-    />
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
+
 
      <script
       src="https://kit.fontawesome.com/1624c2b813.js"
       crossorigin="anonymous"
     ></script>
+
+        <script
+  src="https://code.jquery.com/jquery-3.6.3.min.js"
+  integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+  crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+
+
 
   
 
@@ -36,16 +45,16 @@
   </head>
   <body>
 
-    <div class="top-container">
+    <div class="top-container" >
     <!-- Top Container Start -->
    
     <!-- Header Start -->
        <header id="header">
       <h1>
         <strong>
-          <a href="index.html">Portfolio</a>
-        </strong>
-        by Mikael Torndahl
+          <a href="index.html">Portfolio by</a>
+          </strong>
+        <span class="name">Mikael Torndahl</span>
       </h1>
 
       <!-- Header End -->
@@ -53,7 +62,7 @@
       <!-- Navigation Start -->
 
       <nav id="nav">
-        <ul>
+        <ul class="fadeIn">
           <li>
             <a href="index.html">Home </a>
           </li>
@@ -81,30 +90,39 @@
           </li>
         </ul>
       </nav>
+
       <!-- Navigation End -->
     </div>
       <!-- Top Container End-->
    
     <!-- Banner Start -->
-    <section id="banner">
-      <h2>Mikael's Portfolio</h2>
-      <p>
-        I am web developing from the inside and out. <br />
-        Semantic, responsive and functional.
-      </p>
+ <section id="banner">
+ <div class="text-effect">
+        <h2>
+            <span>W</span>
+            <span>E</span>
+            <span>L</span>
+            <span>C</span>
+            <span>O</span>
+            <span>M</span>
+            <span>E</span>
+        </h2>
+    </div>
 
-      <ul class="actions">
-        <li>
-          <a href="showcase.html" class="button special big" id="button-portfolio"
-            >To Portfolio</a
-          >
-        </li>
-      </ul>
+<p id="typewriter"></p>
+
+
+  
+       <div class="to-portfolio-container fadeIn from-center">
+          <a href="showcase.html" class="to-portfolio btn" >To Portfolio <i class='fas fa-angle-double-right'></i></a>
+          </div>
     </section>
+    
     <!-- Banner End -->
 
+
     <!-- Main Content Start -->
-    <main>
+    <main class="">
       <section class="section1">
         <h2>Processanalys</h2>
         <h3>Hur går jag till väga när jag skapar en hemsida?</h3>
@@ -132,21 +150,21 @@
 
         <h3>HTML</h3>
 
-          <p>Vi börjar med HTML med denna förklaring från wikipedia:</p>
+          <p>Vi börjar med HTML med denna förklaring från <a href="https://sv.wikipedia.org/wiki/HTML" data-tool-tip="Source:">wikipedia:</a></p>
 
-            <blockquote>
+            <blockquote cite="https://sv.wikipedia.org/wiki/HTML">
             HTML ger möjlighet att ange ett dokuments struktur (rubriker,
             styckeindelning m.m.), metainformation (språk, författare, plats i en
             hierarki) och i viss mån hur dokumentet skall visas. HTML tillåter
             också att man infogar information av andra typer, eventuellt i andra
             filer, från början framförallt bilder, senare till exempel
             datorprogram (java, javascript) och instruktioner för hur sidan skall
-            visas (CSS). (Wikipedia, 2021)
-            </blockquote>
+            visas (CSS).
+            </blockquote>     <figcaption>HTML <cite>(Wikipedia, 2021)</cite></figcaption>
           
           <p>Jag skapar ett par stycken .html-filer och varje fil representerar en delsida av hemsidan. index.html är startfilen, det är den fil vi utgår ifrån och den som innehåller välkomstsidan och ofta huvudinnehållet (Main-Content). De andra döps efter det dem ska innehålla (About, contact etc)</p>
 
-          <p>Man kan ofta fylla index.html med en hel del och sen copy/pastea det vidare till de andra sidorna så att det får samma grundmall för att sedan specifiera dem för ändamålet de har</p>
+          <p>Man kan ofta fylla index.html med en hel del och sen copy/pastea det vidare till de andra sidorna så att det får samma grundmall för att sedan specifiera dem för ändamålet de har.</p>
 
 
 
@@ -156,7 +174,7 @@
           till semantisk HTML.
           </p>
 
-            <blockquote>
+            <blockquote cite="https://www.semrush.com/blog/semantic-html5-guide/">
               Semantic HTML, also known as semantic markup, refers to the use of
               HTML tags that convey the meaning—or semantics—of the content
               contained within them. By adding semantic HTML tags to your pages, you
@@ -164,7 +182,7 @@
               relative importance of the different parts of your page. As opposed to
               non-semantic HTML, which uses tags that don’t directly convey meaning.
               (Semrush Blog, n.d.)
-            </blockquote>
+            </blockquote> <figcaption>Semantic HTML: What It Is and How to Use It Correctly </br> <cite>- Vlado Pavlik (Semrush Blog, 2022)</cite></figcaption>
 
           <p>Semantiska element är förklarande och underlättar för personer med hjälpmedel som t.e.x läsplattor. Det hjälper även webbutvecklare att navigera runt lättare när elementen beskriver innehållet.</p>
 
@@ -172,8 +190,8 @@
 
           <p>Jag skapar 3 sektioner den här gången och kallar dem section1, 2 och 3. Detta för att senare kunna använda CSS och stila upp dessa till spalter bredvid varandra. Det är viktigt att sektionerna omslutas av main-elementet då det utgör en container(box/ram) som vi använder för att gruppera innehållet och stila det tillsammans med de CSS verktyg som finns. De olika sektionerna omsluter i sin tur dem rubriker och paragrafer jag vill ha i just den sektionen. Rubrik skrivs innanför &lt;h1&gt; - &lt;h6&gt; och du väljer från lågt - till högt beroende på hur viktiga dem är för innehållet (h1 är viktigast(heading 1) och sen går det nedåt i rang. paragrafer skrivs innanför elementet &lt;p&gt; och omslutar all brödtext.
             
-          <p>Inom brödtexten (paragraferna) vill jag ibland referera till en källa eller citera någon och då använder jag mig av &lt;q&gt; för ett kort inline citat eller &lt;blockquote&gt; för ett som det låter block av text från en källa, det kan vara något beskrivande som styrker det man vill framföra. Här kommer exempel på båda: <q>“Websites should look good from the inside and out.”
-– Paul Cookson (Austin, 2020)</q> Ett bra citat såväl som uppmuntring? Det här blockcitatet träffar också rätt: <blockquote>“Learning HTML and CSS is a lot more challenging than it used to be. Responsive web design adds more layers of complexity to design and develop websites.” – Jacob Lett (Austin, 2020)</blockquote> </p>
+          <p>Inom brödtexten (paragraferna) vill jag ibland referera till en källa eller citera någon och då använder jag mig av &lt;q&gt; för ett kort inline citat eller &lt;blockquote&gt; för ett som det låter block av text från en källa, det kan vara något beskrivande som styrker det man vill framföra. Här kommer exempel på båda: </br> <q cite="https://medium.com/coding-at-dawn/46-encouraging-quotes-for-web-developers-21f3e68a9fdd">Websites should look good from the inside and out.
+</q> </br> <span class="q-cite"> – Paul Cookson (Austin, 2020)</span>  Ett bra citat såväl som uppmuntring? Det här blockcitatet träffar också rätt: <blockquote cite="https://medium.com/coding-at-dawn/46-encouraging-quotes-for-web-developers-21f3e68a9fdd">Learning HTML and CSS is a lot more challenging than it used to be. Responsive web design adds more layers of complexity to design and develop websites. – Jacob Lett (Austin, 2020)</blockquote> </p>
             
         </section>
       
@@ -190,7 +208,7 @@
 
             <p>Vad är då CSS? Här kommer en förklaring från wikipedia:</p>
 
-              <blockquote>
+              <blockquote cite="">
                 Cascading Style Sheets (CSS, på svenska stilmall) är ett språk som
                 beskriver presentationsstilen för ett strukturerat dokument som till
                 exempel typsnitt, textstorlek och färg. Tekniken är ett sätt att
@@ -275,7 +293,8 @@
       <ul class="refs">
         <h3>Referenslista</h3>
           <li>
-            TipsTrix 01 (2018). Whiteboard & Post IT 27th
+            TipsTrix 01 - Christian
+          Olsson (2018). Whiteboard & Post IT 27th
             December. Youtube. [Online Video] </br> <span class="ref-note"> Available from:
             <a href="https://www.youtube.com/watch?v=-5_pBswP-pY&list=PLzCBqdxUNEzvFwyw5sV5Ji7jboJXVDCVc">Youtube<i class="fa-brands fa-square-youtube"></i></a>
             [Accessed: 12 January 2022]. </span>
@@ -284,6 +303,16 @@
             Wikipedia. (2021). HTML. [online] </br> <span class="ref-note"> Available at:
             <a href="https://sv.wikipedia.org/wiki/HTML">Wikipedia</a> [Accessed 17 Jan. 2023]. </span>
           </li>
+           <li>
+            Semrush Blog. - Vlado Pavlik (Dec 02, 2022). HTML5 Semantic Tags: What Are They and How To
+            Use Them! [online] </br> <span class="ref-note"> Available at:
+            <a href="https://www.semrush.com/blog/semantic-html5-guide/">semrush.com</a> [Acessed 20 Okt. 2022] </span>
+          </li>
+             <li>
+            Medium.com (Jun 1, 2020). 46 Encouraging Quotes For Web Developers [online] </br> <span class="ref-note"> Available at:
+            <a href="https://medium.com/coding-at-dawn/46-encouraging-quotes-for-web-developers-21f3e68a9fdd">medium.com</a> [Acessed 28 Okt. 2022] </span>
+          </li>
+          
           <li>
             Meyerweb.com. (2019). CSS Tools: Reset CSS. [online] </br> <span class="ref-note"> Available at:
             <a href="https://meyerweb.com/eric/tools/css/reset/">meyerweb.com</a> [Acessed 18 Nov. 2022] </span>
@@ -292,11 +321,6 @@
             Wikipedia. (2021). Reset style sheet. [online] </br> <span class="ref-note"> Available at:
             <a href="https://en.wikipedia.org/wiki/Reset_style_sheet">Wikipedia</a> [Accessed 24 Jan.
             2023].</span>
-          </li>
-          <li>
-            Semrush Blog. (n.d.). HTML5 Semantic Tags: What Are They and How To
-            Use Them! [online] </br> <span class="ref-note"> Available at:
-            <a href="https://www.semrush.com/blog/semantic-html5-guide/">semrush.com</a> [Acessed 20 Okt. 2022] </span>
           </li>
           <li>W3Bits. (2014). Understanding the Box Sizing Reset in CSS. [online] </br> <span class="ref-note"> Available at: <a href="https://w3bits.com/box-sizing-reset/">w3bits.com</a> [Accessed 24 Jan. 2023].</span></li>
 
@@ -311,28 +335,28 @@
           <li>
             <a
               href="https://www.linkedin.com/in/mikael-torndahl-03381a84"
-              class="fab fa-linkedin fa-2x"
+              class="footer-link fab fa-linkedin fa-2x"
             ></a>
           </li>
 
           <li>
             <a
               href="https://www.facebook.com/micketorndahl/"
-              class="fab fa-facebook-f fa-2x"
+              class="footer-link fab fa-facebook-f fa-2x"
             ></a>
           </li>
 
           <li>
             <a
               href="https://twitter.com/TorndahlMikael"
-              class="fab fa-twitter fa-2x"
+              class="footer-link fab fa-twitter fa-2x"
             ></a>
           </li>
 
           <li>
             <a
               href="https://www.instagram.com/micketorndahl/"
-              class="fab fa-instagram fa-2x"
+              class="footer-link fab fa-instagram fa-2x"
             ></a>
           </li>
         </ul>
@@ -344,7 +368,7 @@
 
           <li>
             Images: Mikael &
-            <a href="http://unsplash.com">Unsplash</a>
+            <a href="http://unsplash.com" class="last-link-border">Unsplash</a>
           </li>
         </ul>
     </footer>
