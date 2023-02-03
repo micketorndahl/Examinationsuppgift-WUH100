@@ -63,8 +63,7 @@ body,
 input,
 select,
 textarea {
-  font-family: "Open-sans-regular", "Arial", "Oswald", "Ubuntu", "Raleway",
-    Helvetica, sans-serif;
+  font-family: "IBM Plex Sans", sans-serif, "Open-Sans";
   font-size: 1em;
   font-weight: 400;
   line-height: 1.5em;
@@ -75,7 +74,7 @@ textarea {
 h1,
 h2,
 h3 {
-  font-family: "Oswald", "Ubuntu", "Raleway";
+  font-family: "IBM Plex Sans", sans-serif;
   color: var(--heading-text-color);
   font-weight: 700;
   line-height: 1em;
@@ -336,7 +335,8 @@ a[data-tool-tip]:hover::after {
 /* HEADER */
 
 header h1 {
-  font-family: "Raleway";
+  font-family: "IBM Plex Sans", sans-serif;
+
   color: #303030;
 }
 
@@ -352,10 +352,11 @@ header h1 {
 
 .name {
   color: #d9edf9;
-  font-family: "Ubuntu";
-  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  text-transform: no;
   margin: 0 0;
-  text-shadow: 0 0 0.8px #aef3ff;
+  text-shadow: 0 0 0.4px #aef3ff;
 }
 
 .slash {
@@ -381,10 +382,6 @@ header {
 }
 
 /* NAV */
-
-#header nav {
-  font-family: "Poppins";
-}
 
 nav {
   font-size: clamp(0.5rem, 0.1rem + 3vw, 1.2555rem);
@@ -412,20 +409,55 @@ nav a:hover {
   padding: 2rem;
 }
 
-/* nav animations*/
-
-nav {
-  animation: 1s ease-out 0s 1 slideInFromRight;
+#nav ul li {
+  opacity: 0;
+  animation: LisOneByOne 0.9s 1;
+  animation-fill-mode: forwards;
 }
 
-@keyframes slideInFromRight {
+#nav ul li:nth-child(1) {
+  animation-delay: 1.5s;
+}
+
+#nav ul li:nth-child(2) {
+  animation-delay: 1.7s;
+}
+
+#nav ul li:nth-child(3) {
+  animation-delay: 1.9s;
+}
+
+#nav ul li:nth-child(4) {
+  animation-delay: 2.1s;
+}
+
+#nav ul li:nth-child(5) {
+  animation-delay: 2.3s;
+}
+
+/*...*/
+
+@keyframes LisOneByOne {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* nav {
+  animation: 1s ease-out 0s 1 slideInFromRight;
+} */
+
+/* @keyframes slideInFromRight {
   0% {
     transform: translateX(100%);
   }
   100% {
     transform: translateX(0);
   }
-}
+} */
 
 nav li {
   transition: all 0.1s ease-in-out 0.1s;
@@ -487,14 +519,13 @@ nav li:hover::after {
 }
 
 #banner h2 {
-  font-family: sans-serif;
+  font-family: "Times New Roman", Times, serif;
   position: relative;
   top: -15rem;
   margin: 3rem;
   color: #fff;
   display: inline-block;
-  font-size: clamp(2rem, 1rem + 5.5vw, 3.5rem);
-  line-height: 1rem;
+  font-size: clamp(1rem, 1rem + 4vw, 1.5rem);
 }
 #banner p {
   font-family: "Rubik", sans-serif;
@@ -574,7 +605,7 @@ nav li:hover::after {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 3.8rem;
+  padding: 2.8rem;
   background-image: linear-gradient(90deg, #0d405d 0%, #417f56 100%);
 }
 
@@ -595,7 +626,8 @@ nav li:hover::after {
 }
 
 .to-portfolio:hover {
-  transform: scale(1);
+  transform: scale(1.005);
+  text-decoration: none;
 }
 
 .fa-angle-double-right {
@@ -623,41 +655,13 @@ nav li:hover::after {
   justify-content: center;
   align-items: center;
   align-self: center;
-  font-size: 2rem;
+  font-family: "Open Sans";
+  font-size: 1.2rem;
   text-decoration: none;
   color: #f9f6ee;
-  letter-spacing: 0.2rem;
   text-transform: uppercase;
   cursor: pointer;
   border-radius: 0 3rem 0 4rem;
-}
-
-.btn:hover {
-  color: #ffffff;
-  text-decoration: none;
-  text-shadow: 0 0 1px #fffbc4;
-  transition: all 2s ease-in-out 0.05s;
-}
-
-a button,
-.big:link {
-  text-decoration: none;
-  color: #fff;
-}
-
-a button,
-.big:visited {
-  text-decoration: none;
-  color: #fff;
-}
-
-ul.actions {
-  text-align: center;
-}
-
-ul.actions li {
-  display: inline-block;
-  padding: 0 1em 0 0;
 }
 
 /* MAIN */
@@ -820,6 +824,7 @@ img:before {
 /* 10. FOOTER */
 
 .page-footer {
+  font-family: "Montserrat";
   padding: 8em 0 6em 0;
   color: #fffff0;
   width: 85%;
@@ -844,7 +849,7 @@ img:before {
   background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
   color: #ffeec0;
   border-radius: 2rem 0 2rem 0;
-  border: 1px solid green;
+  border: 0.2px solid green;
   box-shadow: #7e93a5;
   text-decoration: none;
 }
@@ -854,6 +859,7 @@ img:before {
   font-size: 1.5em;
   font-weight: bolder;
 }
+
 ul.icons li {
   display: inline-block;
   padding: 0 1em 0 0;
@@ -867,7 +873,6 @@ ul.icons li {
 .page-footer .copyright li,
 .contact li {
   display: inline-block;
-  border-left: solid 0.1em;
   list-style: none;
   margin-left: 1.5em;
   padding-left: 1.5em;
@@ -876,22 +881,14 @@ ul.icons li {
   color: var(--skyblue-design);
 }
 
-.last-link-border {
-  display: inline-block;
-  border-right: solid 0.1em var(--grey-bg-color);
-  list-style: none;
-
-  padding-right: 1.5em;
-}
-
 /* footer animations */
 
 .icons li {
-  transition: all 1s ease-in-out 1s;
+  transition: all 0.4s ease-in-out 0.1s;
 }
 
 .icons li:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
   transition: all 0.15s ease-in-out 0.1s;
 }
 
