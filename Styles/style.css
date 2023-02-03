@@ -335,7 +335,8 @@ a[data-tool-tip]:hover::after {
 /* HEADER */
 
 header h1 {
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "DM Sans", "IBM Plex Sans", sans-serif;
+  text-transform: capitalize;
 
   color: #303030;
 }
@@ -347,7 +348,7 @@ header h1 {
 #header a:hover {
   text-decoration-line: none;
   color: #f8f8ce;
-  text-shadow: 0.4px 0 0.8px hsl(56, 100%, 94%);
+  text-shadow: 0.4px 0 0.2px hsl(56, 100%, 94%);
 }
 
 .name {
@@ -411,28 +412,28 @@ nav a:hover {
 
 #nav ul li {
   opacity: 0;
-  animation: LisOneByOne 0.9s 1;
+  animation: LisOneByOne 3s 1;
   animation-fill-mode: forwards;
 }
 
 #nav ul li:nth-child(1) {
-  animation-delay: 1.5s;
+  animation-delay: 2s;
 }
 
 #nav ul li:nth-child(2) {
-  animation-delay: 1.7s;
+  animation-delay: 2.5s;
 }
 
 #nav ul li:nth-child(3) {
-  animation-delay: 1.9s;
+  animation-delay: 3s;
 }
 
 #nav ul li:nth-child(4) {
-  animation-delay: 2.1s;
+  animation-delay: 3.5s;
 }
 
 #nav ul li:nth-child(5) {
-  animation-delay: 2.3s;
+  animation-delay: 4s;
 }
 
 /*...*/
@@ -516,10 +517,25 @@ nav li:hover::after {
   line-height: 1.2em;
   min-width: 100%;
   height: 88.8vh;
+  animation: animatedBackground 10s ease-in-out 1 forwards;
+}
+
+@keyframes animatedBackground {
+  0% {
+    background-position: 0 0;
+  }
+
+  20% {
+  }
+
+  100% {
+    background-position: 100% 0;
+  }
 }
 
 #banner h2 {
-  font-family: "Times New Roman", Times, serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   position: relative;
   top: -15rem;
   margin: 3rem;
@@ -553,13 +569,14 @@ nav li:hover::after {
   text-shadow: 0 0 0 #f5f5f5;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  animation: opacity 4s forwards, smoke 6s 4s forwards;
+  animation: smoke 6s 4s forwards;
 }
 
-@keyframes opacity {
+@keyframes opacityFadeIn {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -609,20 +626,8 @@ nav li:hover::after {
   background-image: linear-gradient(90deg, #0d405d 0%, #417f56 100%);
 }
 
-.to-portfolio {
-  color: #f9f6ee;
-  animation: growth-to-portfolio 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-
-@keyframes growth-to-portfolio {
-  0% {
-    font-size: 1rem;
-  }
-  100% {
-    font-size: 2rem;
-  }
+.portfolio-box {
+  opacity: 0;
 }
 
 .to-portfolio:hover {
