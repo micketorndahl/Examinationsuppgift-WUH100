@@ -417,23 +417,23 @@ nav a:hover {
 }
 
 #nav ul li:nth-child(1) {
-  animation-delay: 2s;
+  animation-delay: 0.5s;
 }
 
 #nav ul li:nth-child(2) {
-  animation-delay: 2.5s;
+  animation-delay: 1s;
 }
 
 #nav ul li:nth-child(3) {
-  animation-delay: 3s;
+  animation-delay: 1.5s;
 }
 
 #nav ul li:nth-child(4) {
-  animation-delay: 3.5s;
+  animation-delay: 2s;
 }
 
 #nav ul li:nth-child(5) {
-  animation-delay: 4s;
+  animation-delay: 2.5s;
 }
 
 /*...*/
@@ -529,7 +529,7 @@ nav li:hover::after {
   }
 
   100% {
-    background-position: 100% 0;
+    background-position: 70% 0;
   }
 }
 
@@ -739,6 +739,17 @@ img:before {
   margin-top: 100%;
 }
 
+figure {
+  width: 33%;
+  padding: 0;
+  margin: 0;
+}
+
+figcaption p {
+  color: #fff;
+  font-size: 0.8rem;
+}
+
 .bluesky-space {
   display: block;
   position: relative;
@@ -826,13 +837,92 @@ img:before {
   text-decoration-color: rgb(82, 4, 4);
 }
 
+/* SHOWCASE PAGE */
+
+.showcase {
+  margin: 0 auto;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.showcase > h2 {
+  padding: 0;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+/* SERVICES PAGE */
+
+.services {
+  margin: 0 auto;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.services > h2 {
+  padding: 0;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+/* ABOUT PAGE */
+
+.about {
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "grids";
+  grid-template-rows: 1fr 1fr;
+  padding: 0;
+  margin: 0;
+}
+
+.about > h2 {
+  padding: 0;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.about > .grid-layout {
+  background-color: red;
+  display: grid;
+  grid-row: 4;
+  grid-area: grid-layout, grids;
+  width: 85%;
+  background-color: #fff;
+  margin: 0 auto;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "section1 section2";
+}
+
+.about > .grid-layout > .section1 {
+}
+.about > .grid-layout > .section2 {
+}
+
+/* CONTACT PAGE */
+
+.contact-page {
+  margin: 0 auto;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-page > h2 {
+  padding: 0;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
 /* 10. FOOTER */
 
 .page-footer {
   font-family: "Montserrat";
   padding: 8em 0 6em 0;
   color: #fffff0;
-  width: 85%;
   margin: 0 auto;
   background: url(../images/mikael-with-guitar2.jpeg);
   background-color: #6e6e6e;
@@ -895,6 +985,10 @@ ul.icons li {
 .icons li:hover {
   transform: scale(1.2);
   transition: all 0.15s ease-in-out 0.1s;
+}
+
+.about-section h2 {
+  color: var(--heading-text-color);
 }
 
 /* ANIMATIONS */
