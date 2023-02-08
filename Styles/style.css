@@ -518,7 +518,7 @@ nav li:hover::after {
   }
 }
 
-#banner h2 {
+/* #banner h2 {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   position: relative;
@@ -527,8 +527,9 @@ nav li:hover::after {
   color: #fff;
   display: inline-block;
   font-size: clamp(1rem, 1rem + 4vw, 1.5rem);
-}
-#banner p {
+} */
+
+/* #banner p {
   font-family: "Rubik", sans-serif;
   color: #36454f;
   position: relative;
@@ -537,24 +538,35 @@ nav li:hover::after {
   line-height: 1.5rem;
   font-size: clamp(0.6rem, 0.7rem + 0.9vw, 1.8rem);
   text-transform: uppercase;
-}
+} */
 
 .bar-under-banner {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 0;
-  background-image: linear-gradient(90deg, #0d405d 0%, #417f56 100%);
+  height: 6rem;
+  padding: 2.5rem;
+  background: rgba(18, 21, 37, 0.722);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.4px);
+  -webkit-backdrop-filter: blur(2.4px);
+  border: 0.05rem solid rgba(0, 74, 93, 0.84);
+  text-align: center;
 }
 
 #bar-under-banner-content {
-  padding: 0;
+  margin: 0 auto;
 }
 
 #bar-under-banner-content p {
-  top: 0;
   color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+#typewriter-text {
+  color: blue;
 }
 
 /* BUTTONS */
@@ -872,7 +884,7 @@ ul.icons li {
   color: var(--skyblue-design);
 }
 
-/* footer animations */
+/* FOOTER ANIMATIONS */
 
 .icons li {
   transition: all 0.4s ease-in-out 0.1s;
@@ -883,7 +895,7 @@ ul.icons li {
   transition: all 0.15s ease-in-out 0.1s;
 }
 
-/* ANIMATIONS */
+/* GENERAL SITE ANIMATIONS */
 
 .fadeIn {
   opacity: 0;
