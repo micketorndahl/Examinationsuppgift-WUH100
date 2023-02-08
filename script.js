@@ -24,5 +24,5 @@ function typeWriter() {
 // JQUERY script to dissolve (fade out) the element i want on scroll down. In this case the "to-portfolio element"
 
 $(window).scroll(function () {
-  $(".to-portfolio-container").css("opacity", 1 - $(window).scrollTop() / 400);
+  $(".bar-under-banner").css("opacity", 1 - $(window).scrollTop() / 400);
 });

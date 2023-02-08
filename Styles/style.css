@@ -412,31 +412,29 @@ nav a:hover {
 
 #nav ul li {
   opacity: 0;
-  animation: LisOneByOne 3s 1;
+  animation: LisOneByOne 2.5s 1;
   animation-fill-mode: forwards;
 }
 
 #nav ul li:nth-child(1) {
-  animation-delay: 0.5s;
+  animation-delay: 0.3s;
 }
 
 #nav ul li:nth-child(2) {
-  animation-delay: 1s;
+  animation-delay: 0.7s;
 }
 
 #nav ul li:nth-child(3) {
-  animation-delay: 1.5s;
+  animation-delay: 1.1s;
 }
 
 #nav ul li:nth-child(4) {
-  animation-delay: 2s;
+  animation-delay: 1.5s;
 }
 
 #nav ul li:nth-child(5) {
-  animation-delay: 2.5s;
+  animation-delay: 1.9s;
 }
-
-/*...*/
 
 @keyframes LisOneByOne {
   0% {
@@ -446,19 +444,6 @@ nav a:hover {
     opacity: 1;
   }
 }
-
-/* nav {
-  animation: 1s ease-out 0s 1 slideInFromRight;
-} */
-
-/* @keyframes slideInFromRight {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-} */
 
 nav li {
   transition: all 0.1s ease-in-out 0.1s;
@@ -554,104 +539,23 @@ nav li:hover::after {
   text-transform: uppercase;
 }
 
-/* Setting a pre-wrap on the typewriter id so it allows my typewriter js function to linebreak */
-#typewriter {
-  margin: 0 auto;
-  white-space: pre-wrap;
-}
-
-.text-effect {
-  margin: 2rem auto;
-}
-.text-effect span {
-  display: inline-flex;
-  font-size: 3.8rem;
-  text-shadow: 0 0 0 #f5f5f5;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  animation: smoke 6s 4s forwards;
-}
-
-@keyframes opacityFadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes smoke {
-  60% {
-    text-shadow: 0 0 8px #f5f5f5;
-  }
-  to {
-    text-shadow: 0 0 16px #f5f5f5;
-    transform: scale(0.5);
-
-    opacity: 0;
-  }
-}
-
-.eight span:nth-of-type(1) {
-  animation-delay: 2.1s;
-}
-.eight span:nth-of-type(2) {
-  animation-delay: 2.6s;
-}
-.eight span:nth-of-type(3) {
-  animation-delay: 2.3s;
-}
-.eight span:nth-of-type(4) {
-  animation-delay: 2.9s;
-}
-.eight span:nth-of-type(5) {
-  animation-delay: 2.5s;
-}
-
-.eight span:nth-of-type(6) {
-  animation-delay: 2.2s;
-}
-
-.eight span:nth-of-type(7) {
-  animation-delay: 2.8s;
-}
-.to-portfolio-container {
+.bar-under-banner {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 2.8rem;
+  padding: 0;
   background-image: linear-gradient(90deg, #0d405d 0%, #417f56 100%);
 }
 
-.portfolio-box {
-  opacity: 0;
+#bar-under-banner-content {
+  padding: 0;
 }
 
-.to-portfolio:hover {
-  transform: scale(1.005);
-  text-decoration: none;
+#bar-under-banner-content p {
+  top: 0;
+  color: #fff;
 }
-
-.fa-angle-double-right {
-  display: block;
-  color: #e3fff5;
-  font-size: 3rem;
-  position: absolute;
-  margin-left: 25rem;
-  padding: 0.9rem 0.9rem 0.8rem 1.2rem;
-  box-shadow: inset 0 5px 0 rgb(57, 35, 35);
-  border-radius: 0 3rem 0 4rem;
-  border: 0.8px solid rgb(33, 19, 19);
-  background-image: linear-gradient(90deg, #17430e 70%, #9a9491 100%);
-  mix-blend-mode: luminosity;
-  /* z-index: -200; */
-}
-
-/* border-radius: 0.2rem; */
-/* box-shadow: inset 0 1px 0 rgb(30, 22, 22); */
 
 /* BUTTONS */
 
@@ -695,9 +599,6 @@ main {
 main h2 {
   color: rgb(236, 236, 236);
   margin-top: 10rem;
-}
-
-main h3 {
 }
 
 .grid-layout {
@@ -750,7 +651,7 @@ figcaption p {
   font-size: 0.8rem;
 }
 
-.bluesky-space {
+.image-space {
   display: block;
   position: relative;
   width: 100%;
@@ -897,11 +798,6 @@ figcaption p {
   grid-template-areas: "section1 section2";
 }
 
-.about > .grid-layout > .section1 {
-}
-.about > .grid-layout > .section2 {
-}
-
 /* CONTACT PAGE */
 
 .contact-page {
@@ -985,10 +881,6 @@ ul.icons li {
 .icons li:hover {
   transform: scale(1.2);
   transition: all 0.15s ease-in-out 0.1s;
-}
-
-.about-section h2 {
-  color: var(--heading-text-color);
 }
 
 /* ANIMATIONS */
