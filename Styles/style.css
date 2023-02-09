@@ -557,6 +557,10 @@ nav li:hover::after {
 
 #bar-under-banner-content {
   margin: 0 auto;
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
 }
 
 #bar-under-banner-content p {
@@ -566,7 +570,14 @@ nav li:hover::after {
 }
 
 #typewriter-text {
-  color: blue;
+  border-right: solid white 4px;
+  animation: blink 0.3s step-end infinite alternate;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }
 
 /* BUTTONS */
