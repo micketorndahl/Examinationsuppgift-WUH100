@@ -607,7 +607,7 @@ main {
 
 .intro-section {
   position: relative;
-  margin: 0;
+  margin: 0 0 0.6rem 0;
   padding: 6rem;
   padding-bottom: 0;
   width: 100%;
@@ -639,7 +639,7 @@ main h2 {
   flex-grow: 1;
   flex-shrink: 1;
   justify-content: space-around;
-  margin-bottom: -20%;
+  margin-bottom: -30%;
 
   /* border: 0.5rem solid rgb(250, 250, 250); */
   border-radius: 50%;
