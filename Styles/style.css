@@ -42,7 +42,6 @@ html {
   --grey-bg-color: rgba(217, 217, 217, 0.675);
   --darkgrey-bg-color: rgb(56, 56, 56);
   --def: #ffffff;
-  --inv: linear-gradient(15deg, #093637 #13547a 0%, #80d0c7 100%);
 }
 
 body {
@@ -355,7 +354,6 @@ header h1 {
   color: #d9edf9;
   font-family: "Poppins", sans-serif;
   font-size: 0.8rem;
-  text-transform: no;
   margin: 0 0;
   text-shadow: 0 0 0.4px #aef3ff;
 }
@@ -451,7 +449,7 @@ nav li {
 
 nav li:hover {
   transform: scale(1.1);
-  transition: all 0.15s 1s ease-in-out 0.05s;
+  transition: all 0.15s ease-in-out 0.05s;
 }
 
 nav li:after,
@@ -627,7 +625,7 @@ main h2 {
 .grid-layout {
   display: grid;
   grid-row: 4;
-  grid-area: grid-layout, grids;
+  grid-area: grid-layout grids;
   width: 85%;
   background-color: #fff;
   margin: -20rem auto;
@@ -648,7 +646,6 @@ main h2 {
 }
 
 .img {
-  display: absolute;
   width: 15rem;
   height: 15rem;
   padding: 0;
@@ -688,7 +685,7 @@ figcaption p {
 .section1,
 .section2,
 .section3 {
-  padding: 6rem 1.5rem;
+  padding: 2rem 1.5rem;
 }
 
 .section1 {
@@ -813,7 +810,7 @@ figcaption p {
   background-color: red;
   display: grid;
   grid-row: 4;
-  grid-area: grid-layout, grids;
+  grid-area: grid-layout grids;
   width: 85%;
   background-color: #fff;
   margin: 0 auto;
@@ -864,7 +861,6 @@ figcaption p {
   color: #ffeec0;
   border-radius: 2rem 0 2rem 0;
   border: 0.2px solid green;
-  box-shadow: #7e93a5;
   text-decoration: none;
 }
 

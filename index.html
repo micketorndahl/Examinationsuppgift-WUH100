@@ -60,22 +60,17 @@
           </li>
 
           <li>
-            <a href="services.html"
-              >Services</a
-            >
+            <a href="services.html">Services</a>
           </li>
 
-                    <li>
-            <a href="about.html"
-              ></i>About</a
-            >
+          <li>
+            <a href="about.html">About</a>
           </li>
 
-                    <li>
-            <a href="contact.html"
-              >Contact</a
-            >
+          <li>
+            <a href="contact.html">Contact</a>
           </li>
+
         </ul>
       </nav>
 
@@ -275,6 +270,16 @@
               den individuella sidan.
             </p>
 
+            <p>Jag använder mig av :root elementet för att skapa variabler och i detta fall till färger som ska förekomma i flera olika delar av sidan/sidorna. För att inte behöva upprepa mig kan jag tilldela ett namn som t.e.x "body-text-color" till en färg och om vill jag byta den färgen gör jag det längst upp i dokumentet (:root) jag slipper då att gå in och ändra på varje specifierad färg. Förklaring till :root 
+              
+             <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/CSS/:root">The :root CSS pseudo-class matches the root element of a tree representing the document. In HTML, :root represents the &lt;html&gt; element and is identical to the selector html, except that its specificity is higher. (developer.mozilla.org, n.d.)</blockquote></p> 
+
+             <p>Jag väljer body elementet och stylar det med en background-image: linear-gradient och sätter 4 olika färger som bakgrunden ska skiftas emellan (detta ger en fin övegång i färger, det är bra om man väljer snarlika färger för en mjuk övergång). Jag sätter basfärg för sidan genom color och tilldelar den min variabel i : root (body-text-color). Overflow-x: hidden för att "klippa" ifall något svämmar över ut i kanterna annars kan en skroll-bar i sidled dyka upp. </p>
+
+             <p>Jag väljer ett antal element som jag vill ge samma font-family (typsnitt), storlek, line-height etc</p>
+
+             <p>Jag väljer mina headings tillsammans för att först ge dem ett liknande utseende och sedan separat (h1, h2, h3 etc.) för att ge dem storleksskillnader. Jag använder mig av clamp för att göra sidan mer responsiv. Om clamp:   <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/CSS/clamp">The clamp() CSS function clamps a middle value within a range of values between a defined minimum bound and a maximum bound. The function takes three parameters: a minimum value, a preferred value, and a maximum allowed value. (developer.mozilla.org, n.d.)</blockquote> </p>
+
             <h3>Javascript</h3>
         </section>
 
@@ -332,16 +337,27 @@
             Meyerweb.com. (2019). CSS Tools: Reset CSS. [online] </br> <span class="ref-note"> Available at:
             <a href="https://meyerweb.com/eric/tools/css/reset/">meyerweb.com</a> [Acessed 18 Nov. 2022] </span>
           </li>
+
           <li>
             Wikipedia. (2021). Reset style sheet. [online] </br> <span class="ref-note"> Available at:
             <a href="https://en.wikipedia.org/wiki/Reset_style_sheet">Wikipedia</a> [Accessed 24 Jan.
             2023].</span>
           </li>
-          <li>W3Bits. (2014). Understanding the Box Sizing Reset in CSS. [online] </br> <span class="ref-note"> Available at: <a href="https://w3bits.com/box-sizing-reset/">w3bits.com</a> [Accessed 24 Jan. 2023].</span></li>
-          <li>W3schools. (2019). HTML span tag. [online] <span class="ref-note"> </br> Available at: <a href="https://www.w3schools.com/tags/tag_span.asp">w3schools.com</a> [Accessed 10 Jan. 2023]</span></li>
-           <li>Fontawesome (2017). Font Awesome 5. [online] <span class="ref-note"> </br> Available at: <a href="https://fontawesome.com/">fonawesome.com</a> [Accessed 10 Jan. 2023]</span></li>
 
-      .
+          <li>W3Bits. (2014). Understanding the Box Sizing Reset in CSS. [online] </br> <span class="ref-note"> Available at: <a href="https://w3bits.com/box-sizing-reset/">w3bits.com</a> [Accessed 24 Jan. 2023].</span></li>
+
+          <li>W3schools. (2019). HTML span tag. [online] <span class="ref-note"> </br> Available at: <a href="https://www.w3schools.com/tags/tag_span.asp">w3schools.com</a> [Accessed 10 Jan. 2023]</span></li>
+
+          <li>Fontawesome (2017). Font Awesome 5. [online] <span class="ref-note"> </br> Available at: <a href="https://fontawesome.com/">fonawesome.com</a> [Accessed 10 Jan. 2023]</span></li>
+
+          <li>developer.mozilla.org. (n.d.). :root - CSS: Cascading Style Sheets | MDN. [online] <span class="ref-note"> </br> Available at: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:root">developer.mozilla.org</a> [Accessed 3 Jan. 2023]</span></li>
+
+           <li>developer.mozilla.org. (n.d.). clamp() - CSS: Cascading Style Sheets | MDN. [online] <span class="ref-note"> </br> Available at: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clamp.">developer.mozilla.org</a> [Accessed 10 Dec. 2022]</span></li>
+
+
+       
+        
+      
 
       </ul>
     </footer>
