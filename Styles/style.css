@@ -712,6 +712,14 @@ figcaption p {
   margin: 0 auto;
   background-color: #fff;
   width: 85%;
+  text-align: center;
+}
+
+.refs-footer h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .refs {

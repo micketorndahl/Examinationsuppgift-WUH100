@@ -143,17 +143,26 @@
 
   .grid-layout {
     display: flex;
+    flex-wrap: wrap;
+    flex: auto;
+    flex-basis: content;
     flex-direction: column;
     background-color: #fff;
     margin: -20rem auto;
     animation: fader 2s;
   }
 
-  .img {
+  .image-container {
     display: flex;
-    width: 12rem;
-    height: 12rem;
-    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img {
+    width: 15rem;
+    height: 15rem;
+    padding: 0.2rem;
     text-align: center;
     border-radius: 50%;
     border: 0.5rem solid white;
